@@ -29,20 +29,20 @@ Pod::Spec.new do |s|
     s.resource_bundles = {
     'BugReportKit' => ['Pod/Assets/*.png']
     }
-    
+
     s.default_subspec = 'Core'
-    
+
     s.subspec 'Core' do |cr|
         cr.source_files = 'Pod/Classes/Core/**/*'
         cr.public_header_files = 'Pod/Core/BRK.h'
         cr.dependency 'GBDeviceInfo'
         cr.frameworks = 'UIKit', 'CoreTelephony', 'SystemConfiguration'
-    end        
+    end
 
     s.subspec 'S3ImageUploader' do |er|
         er.source_files = 'Pod/Classes/ImageUploader/**/*'
         er.public_header_files = 'Pod/ImageUploader/*.h'
-        er.dependency 'AWSS3', '2.2.3'
+        er.dependency 'AWSS3'
         er.dependency 'BugReportKit/Core'
     end
 
